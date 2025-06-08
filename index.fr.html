@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mazandaran</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #f5fffa, #fffaf0);
+      color: #333;
+      text-align: center;
+    }
+
+    .header, .footer {
+      background-color: #d0f0e0;
+      padding: 1rem;
+    }
+
+    .home-link {
+      display: inline-block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2a7a66;
+      background-color: #fff;
+      border: 2px solid #2a7a66;
+      border-radius: 10px;
+      padding: 0.5rem 1.2rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .home-link:hover {
+      background-color: #2a7a66;
+      color: white;
+    }
+
+    .main-image {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+    }
+
+    .icon-section {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 2rem 1rem;
+      gap: 1rem;
+    }
+
+    .icon-item {
+      width: 90px;
+      height: 90px;
+      background: #fefefe;
+      border: 2px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #555;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .icon-item:hover {
+      transform: scale(1.1);
+      border-color: #2a7a66;
+      color: #2a7a66;
+    }
+
+    .icon-item img {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 0.4rem;
+    }
+
+    .about {
+      max-width: 700px;
+      margin: 2rem auto;
+      font-size: 1.2rem;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .icon-section {
+        gap: 0.8rem;
+      }
+
+      .icon-item {
+        width: 75px;
+        height: 75px;
+        font-size: 0.8rem;
+      }
+
+      .icon-item img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .about {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <a href="index-fr.html" class="home-link">Accueil</a>
+  </div>
+
+  <img src="https://i.imgur.com/1rPtKQI.jpeg" alt="Image de Mazandaran" class="main-image">
+
+  <div class="icon-section">
+    <div class="icon-item">
+      <img src="icons/poem.png" alt="Poésie">
+      Poésie
+    </div>
+    <div class="icon-item">
+      <img src="icons/story.png" alt="Conte">
+      Conte
+    </div>
+    <div class="icon-item">
+      <img src="icons/article.png" alt="Écrits">
+      Écrits
+    </div>
+    <div class="icon-item">
+      <img src="icons/music.png" alt="Musique">
+      Musique
+    </div>
+    <div class="icon-item">
+      <img src="icons/softness.png" alt="Douceur">
+      Douceur
+    </div>
+  </div>
+
+  <div class="about">
+    Mazandaran est une terre de forêts et de mers, de montagnes et de brume,  
+    où chantent les oiseaux et flotte le parfum de la terre après la pluie.  
+    Un pays où les légendes chuchotent encore, et où les cœurs sont ouverts à la bonté et à l’hospitalité.  
+    Ici, la poésie jaillit de la nature et le son du ney résonne depuis les hauteurs.  
+    <br><br>
+    Bienvenue à Mazandaran 💚
+  </div>
+
+  <div class="footer">
+    <a href="index-fr.html" class="home-link">Accueil</a>
+  </div>
+
+</body>
+</html>
