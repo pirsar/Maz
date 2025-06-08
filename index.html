@@ -1,96 +1,104 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>مازندران - پروانه‌ها</title>
-<style>
-  body {
-    margin: 0;
-    font-family: 'Vazirmatn', sans-serif;
-    background: #fdfdfd;
-    text-align: center;
-    color: #333;
-    overflow-x: hidden;
-    position: relative;
-    min-height: 100vh;
-  }
-  header {
-    background-color: #e6f2ef;
-    padding: 2rem 1rem;
-    position: relative;
-    z-index: 10;
-  }
-  .logo {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #2a7a66;
-    display: inline-block;
-    position: relative;
-  }
-  .lang-buttons {
-    margin-top: 1rem;
-  }
-  .lang-buttons a {
-    display: inline;
-    margin: 0 0.5rem;
-    font-size: 1.5rem;
-    padding: 0.5rem 1rem;
-    background: #2a7a66;
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
-  .lang-buttons a:hover {
-    background: #206456;
-  }
-  .main-image {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    position: relative;
-    z-index: 5;
-  }
-  .poem {
-    font-size: 1.6rem;
-    font-weight: 500;
-    margin: 2rem 1rem 4rem 1rem;
-    color: #444;
-    position: relative;
-    z-index: 10;
-  }
-  .butterfly {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    pointer-events: none;
-    user-select: none;
-    will-change: transform, top, left;
-    transition: transform 0.2s linear;
-  }
-  @media (max-width: 600px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مازندران - گلبرگ‌ها</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: #fdfdfd;
+      text-align: center;
+      color: #333;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #e6f2ef;
+      padding: 2rem 1rem;
+    }
+
     .logo {
-      font-size: 2.2rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2a7a66;
     }
+
+    .lang-buttons {
+      margin-top: 1rem;
+    }
+
     .lang-buttons a {
-      font-size: 1.2rem;
-      padding: 0.4rem 0.8rem;
+      display: inline;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+      background: #2a7a66;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
     }
+
+    .lang-buttons a:hover {
+      background: #206456;
+    }
+
+    .main-image {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+    }
+
     .poem {
-      font-size: 1.3rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin: 2rem 1rem;
+      color: #444;
     }
-    .butterfly {
-      width: 35px;
-      height: 35px;
+
+    .petal {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: pink;
+      opacity: 0.8;
+      animation: float 10s linear infinite;
     }
-  }
-</style>
+
+    @keyframes float {
+      0% {
+        transform: translateY(-10%) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110%) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 2.2rem;
+      }
+
+      .lang-buttons a {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .poem {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <div class="logo" id="logo">مازندران</div>
+    <div class="logo">مازندران</div>
     <div class="lang-buttons">
       <a href="index.fr.html">🇫🇷</a>
       <a href="index.fa.html">☘️</a>
@@ -98,98 +106,32 @@
     </div>
   </header>
 
-  <img src="https://i.imgur.com/Ch2abmO.jpeg" alt="تصویری از مازندران" class="main-image" id="mainImage" />
+  <img src="https://i.imgur.com/Ch2abmO.jpeg" alt="تصویری از مازندران" class="main-image" />
 
-  <div class="poem" id="poem">
+  <div class="poem">
     که مازندران شهر ما یاد باد<br />
     همیشه بر و بومش آباد باد
   </div>
 
-  <!-- پروانه‌ها -->
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Butterfly_icon.svg/50px-Butterfly_icon.svg.png" alt="پروانه" class="butterfly" id="butterfly1" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Butterfly_icon.svg/50px-Butterfly_icon.svg.png" alt="پروانه" class="butterfly" id="butterfly2" />
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Butterfly_icon.svg/50px-Butterfly_icon.svg.png" alt="پروانه" class="butterfly" id="butterfly3" />
+  <script>
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      document.body.appendChild(petal);
 
-<script>
-  const logo = document.getElementById('logo');
-  const mainImage = document.getElementById('mainImage');
-  const poem = document.getElementById('poem');
-  const butterflies = [
-    document.getElementById('butterfly1'),
-    document.getElementById('butterfly2'),
-    document.getElementById('butterfly3'),
-  ];
+      // موقعیت افقی و رنگ تصادفی
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.background = ['pink', 'lightblue', 'lightgreen', 'lavender'][Math.floor(Math.random() * 4)];
+      petal.style.animationDuration = 8 + Math.random() * 5 + 's';
+      petal.style.opacity = Math.random() * 0.5 + 0.5;
 
-  function updatePositions() {
-    const logoRect = logo.getBoundingClientRect();
-    const mainImageRect = mainImage.getBoundingClientRect();
-    const poemRect = poem.getBoundingClientRect();
-
-    return {
-      startX: logoRect.left + logoRect.width / 2 + window.scrollX,
-      startY: logoRect.top + logoRect.height / 2 + window.scrollY,
-      imageX: mainImageRect.left + mainImageRect.width / 2 + window.scrollX,
-      imageY: mainImageRect.top + mainImageRect.height / 2 + window.scrollY,
-      poemX: poemRect.left + poemRect.width / 2 + window.scrollX,
-      poemY: poemRect.top + poemRect.height / 2 + window.scrollY,
-    };
-  }
-
-  function animateButterfly(butterfly, delay, phaseOffset) {
-    let start = null;
-    const duration = 15000;
-    const radius = 80;
-
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      const elapsed = (timestamp - start + delay) % duration;
-      const progress = elapsed / duration;
-
-      const pos = updatePositions();
-
-      if (progress < 0.2) {
-        // پرواز از لوگو به تصویر
-        const t = progress / 0.2;
-        const x = pos.startX + t * (pos.imageX - pos.startX);
-        const y = pos.startY + t * (pos.imageY - pos.startY);
-        butterfly.style.left = (x - butterfly.offsetWidth / 2) + 'px';
-        butterfly.style.top = (y - butterfly.offsetHeight / 2) + 'px';
-        butterfly.style.transform = `rotate(${t * 360}deg)`;
-      } else if (progress < 0.6) {
-        // چرخش دور تصویر
-        const t = (progress - 0.2) / 0.4;
-        const angle = 2 * Math.PI * t + phaseOffset;
-        const x = pos.imageX + radius * Math.cos(angle);
-        const y = pos.imageY + radius * Math.sin(angle) * 0.6;
-        butterfly.style.left = (x - butterfly.offsetWidth / 2) + 'px';
-        butterfly.style.top = (y - butterfly.offsetHeight / 2) + 'px';
-        butterfly.style.transform = `rotate(${angle * 180 / Math.PI + 45}deg)`;
-      } else if (progress < 0.8) {
-        // پرواز از تصویر به شعر
-        const t = (progress - 0.6) / 0.2;
-        const x = pos.imageX + t * (pos.poemX - pos.imageX);
-        const y = pos.imageY + t * (pos.poemY - pos.imageY);
-        butterfly.style.left = (x - butterfly.offsetWidth / 2) + 'px';
-        butterfly.style.top = (y - butterfly.offsetHeight / 2) + 'px';
-        butterfly.style.transform = `rotate(${t * 360}deg)`;
-      } else {
-        // نشستن روی شعر و توقف کوتاه
-        butterfly.style.left = (pos.poemX - butterfly.offsetWidth / 2) + 'px';
-        butterfly.style.top = (pos.poemY - butterfly.offsetHeight / 2) + 'px';
-        butterfly.style.transform = 'rotate(0deg)';
-      }
-
-      requestAnimationFrame(step);
+      // حذف پس از اتمام
+      setTimeout(() => petal.remove(), 15000);
     }
 
-    requestAnimationFrame(step);
-  }
-
-  butterflies.forEach((butterfly, i) => {
-    animateButterfly(butterfly, i * 5000, (i * 2 * Math.PI) / butterflies.length);
-  });
-
-</script>
+    // تولید مداوم گلبرگ‌ها
+    setInterval(createPetal, 300);
+  </script>
 
 </body>
 </html>
