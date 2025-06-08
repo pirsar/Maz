@@ -60,46 +60,14 @@
     position: relative;
     z-index: 10;
   }
-  /* پروانه ساده با CSS */
   .butterfly {
-    width: 40px;
-    height: 40px;
     position: absolute;
+    width: 50px;
+    height: 50px;
     pointer-events: none;
     user-select: none;
     will-change: transform, top, left;
-  }
-  .butterfly .wing {
-    position: absolute;
-    width: 16px;
-    height: 24px;
-    background: linear-gradient(45deg, #ff6a6a, #ff0000);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    top: 8px;
-    transform-origin: left center;
-    animation: wingFlap 1.2s ease-in-out infinite;
-    filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
-  }
-  .butterfly .wing.right {
-    right: 0;
-    background: linear-gradient(135deg, #6aafff, #0040ff);
-    transform-origin: right center;
-    animation-delay: 0.6s;
-  }
-  .butterfly .body {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    width: 8px;
-    height: 20px;
-    margin-left: -4px;
-    background: #333;
-    border-radius: 4px;
-    box-shadow: inset 0 0 5px #666;
-  }
-  @keyframes wingFlap {
-    0%, 100% { transform: rotate(20deg); }
-    50% { transform: rotate(-20deg); }
+    transition: transform 0.2s linear;
   }
   @media (max-width: 600px) {
     .logo {
@@ -113,19 +81,8 @@
       font-size: 1.3rem;
     }
     .butterfly {
-      width: 30px;
-      height: 30px;
-    }
-    .butterfly .wing {
-      width: 12px;
-      height: 18px;
-      top: 6px;
-    }
-    .butterfly .body {
-      width: 6px;
-      height: 15px;
-      top: 8px;
-      margin-left: -3px;
+      width: 35px;
+      height: 35px;
     }
   }
 </style>
@@ -149,21 +106,9 @@
   </div>
 
   <!-- پروانه‌ها -->
-  <div class="butterfly" id="butterfly1">
-    <div class="wing left"></div>
-    <div class="wing right"></div>
-    <div class="body"></div>
-  </div>
-  <div class="butterfly" id="butterfly2">
-    <div class="wing left"></div>
-    <div class="wing right"></div>
-    <div class="body"></div>
-  </div>
-  <div class="butterfly" id="butterfly3">
-    <div class="wing left"></div>
-    <div class="wing right"></div>
-    <div class="body"></div>
-  </div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Butterfly_icon.svg/50px-Butterfly_icon.svg.png" alt="پروانه" class="butterfly" id="butterfly1" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Butterfly_icon.svg/50px-Butterfly_icon.svg.png" alt="پروانه" class="butterfly" id="butterfly2" />
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Butterfly_icon.svg/50px-Butterfly_icon.svg.png" alt="پروانه" class="butterfly" id="butterfly3" />
 
 <script>
   const logo = document.getElementById('logo');
@@ -240,15 +185,10 @@
     requestAnimationFrame(step);
   }
 
-  // شروع انیمیشن برای هر پروانه با تأخیر و فاز متفاوت
   butterflies.forEach((butterfly, i) => {
     animateButterfly(butterfly, i * 5000, (i * 2 * Math.PI) / butterflies.length);
   });
 
-  // آپدیت موقعیت ها هنگام تغییر سایز صفحه
-  window.addEventListener('resize', () => {
-    // به طور خودکار موقعیت‌ها در هر فریم خوانده می‌شوند؛ نیاز به کار اضافی نیست
-  });
 </script>
 
 </body>
